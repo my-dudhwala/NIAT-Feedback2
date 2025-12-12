@@ -1,0 +1,173 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIAT — Workshop Feedback</title>
+  <meta name="description" content="NIAT workshop — quick feedback & trainer profiles" />
+  <style>
+    /* Minimal, modern responsive styling */
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#6ee7b7;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#041127 0%, #071428 100%);color:#e6eef6}
+    .container{max-width:980px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#052;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:6px 0 18px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+@media (max-width:880px){.grid{grid-template-columns:1fr} .aside{order:2}}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+
+/* Feedback area */
+.feedback-title{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.btn-primary{background:linear-gradient(90deg,#10b981,#60a5fa);color:#042}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+form{margin-top:14px;display:grid;gap:10px}
+input[type=text], input[type=email], textarea, select{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit}
+textarea{min-height:120px;resize:vertical}
+label{font-size:0.85rem;color:var(--muted)}
+
+/* Profiles */
+.profiles{display:grid;gap:12px}
+.profile{display:flex;gap:12px;align-items:center}
+.avatar{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#60a5fa,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#032}
+.pmeta{flex:1}
+.pmeta h4{margin:0;font-size:1rem}
+.pmeta p{margin:4px 0 0;color:var(--muted);font-size:0.86rem}
+.li{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none;color:inherit;font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+
+footer{margin-top:18px;color:var(--muted);font-size:0.86rem;text-align:center}
+
+/* small helpers */
+.row{display:flex;gap:10px;align-items:center}
+.small{font-size:0.85rem;color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden>NIAT</div>
+      <div>
+        <h1>NIAT workshop — feedback</h1>
+        <p class="lead">Thank you for attending. Please take 2–3 minutes to share feedback — it helps improve future sessions.</p>
+      </div>
+    </header><main class="grid" role="main">
+  <section class="card">
+    <div class="feedback-title">
+      <div>
+        <strong>Quick anonymous feedback</strong>
+        <div class="small">Optional: add name & email so we can follow up</div>
+      </div>
+      <!-- Replace FORM_URL below with your Google Form or other hosted form link -->
+      <div>
+        <a class="btn btn-primary" href="https://forms.gle/YOUR_FORM_ID" target="_blank" rel="noopener noreferrer">Open feedback form</a>
+        <a class="btn btn-ghost" href="#inline">Use inline form</a>
+      </div>
+    </div>
+
+    <!-- Inline fallback form (submits via mailto if you don't have a hosted form). -->
+    <!-- If you're using Google Forms, replace the Open feedback form link above with the form's share URL and remove this inline form. -->
+    <form id="feedbackForm" action="mailto:feedback@example.com" method="post" enctype="text/plain">
+      <label for="name">Name (optional)</label>
+      <input id="name" name="Name" type="text" placeholder="Your name" />
+
+      <label for="email">Email (optional)</label>
+      <input id="email" name="Email" type="email" placeholder="email@domain.com" />
+
+      <label for="rating">Overall rating</label>
+      <select id="rating" name="Rating">
+        <option value="5">5 — Excellent</option>
+        <option value="4">4 — Very good</option>
+        <option value="3">3 — Good</option>
+        <option value="2">2 — Fair</option>
+        <option value="1">1 — Poor</option>
+      </select>
+
+      <label for="what">What worked well?</label>
+      <textarea id="what" name="What_worked" placeholder="What did you like?"></textarea>
+
+      <label for="improve">What should be improved?</label>
+      <textarea id="improve" name="Improvements" placeholder="Suggestions"></textarea>
+
+      <div class="row" style="margin-top:8px">
+        <button type="submit" class="btn btn-primary">Send feedback (email)</button>
+        <button type="reset" class="btn btn-ghost">Clear</button>
+      </div>
+    </form>
+
+    <p class="small" style="margin-top:12px">Tip: For reliable collection use a Google Form — copy the form link and replace <code>https://forms.gle/YOUR_FORM_ID</code> in the "Open feedback form" button.</p>
+  </section>
+
+  <aside class="aside card">
+    <strong>Trainers & HOD</strong>
+    <div class="profiles" style="margin-top:12px">
+
+      <article class="profile">
+        <div class="avatar">CM</div>
+        <div class="pmeta">
+          <h4>Chaithanya Muppala</h4>
+          <p>Trainer</p>
+        </div>
+        <a class="li" href="https://www.linkedin.com/in/chaithanya-muppala-98566719a/" target="_blank" rel="noopener noreferrer" aria-label="Chaithanya on LinkedIn">
+          <!-- LinkedIn SVG -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <path d="M4.98 3.5C4.98 4.6 4.14 5.5 3.05 5.5 1.96 5.5 1.12 4.6 1.12 3.5 1.12 2.4 1.96 1.5 3.05 1.5 4.14 1.5 4.98 2.4 4.98 3.5zM.5 8.98H5.6V23H.5V8.98zM8.5 8.98H13.26V11.08H13.34C13.99 9.86 15.57 8.52 17.86 8.52 22.02 8.52 23 11.27 23 15.42V23H17.9V16.4C17.9 14.28 17.86 11.64 15.05 11.64 12.18 11.64 11.56 13.86 11.56 16.22V23H6.46V8.98H8.5z" fill="currentColor"/>
+          </svg>
+          View
+        </a>
+      </article>
+
+      <article class="profile">
+        <div class="avatar">LN</div>
+        <div class="pmeta">
+          <h4>Lingam Nandeeswar</h4>
+          <p>Trainer</p>
+        </div>
+        <a class="li" href="https://www.linkedin.com/in/lingamnandeeswar" target="_blank" rel="noopener noreferrer" aria-label="Lingam on LinkedIn">View</a>
+      </article>
+
+      <article class="profile">
+        <div class="avatar">SM</div>
+        <div class="pmeta">
+          <h4>Saiteja Manchukanti</h4>
+          <p>HOD</p>
+        </div>
+        <a class="li" href="https://www.linkedin.com/in/saiteja-manchukanti" target="_blank" rel="noopener noreferrer" aria-label="Saiteja on LinkedIn">View</a>
+      </article>
+
+    </div>
+
+    <footer>
+      <div>NIAT • Workshop feedback</div>
+      <div style="margin-top:6px">Made for quick collection — replace the form link with your Google Form to collect responses centrally.</div>
+    </footer>
+  </aside>
+</main>
+
+  </div>  <script>
+    // small enhancement: scroll to inline form when anchor clicked
+    document.querySelectorAll('a[href="#inline"]').forEach(a => {
+      a.addEventListener('click', e => { e.preventDefault(); document.getElementById('feedbackForm').scrollIntoView({behavior:'smooth'}); });
+    });
+
+    // Optional: make mailto action include a subject line
+    const form = document.getElementById('feedbackForm');
+    form.addEventListener('submit', function(e){
+      // Build mailto and let browser handle it
+      const to = 'feedback@example.com'; // <-- replace with your feedback email
+      const name = encodeURIComponent(document.getElementById('name').value || 'Anonymous');
+      const email = encodeURIComponent(document.getElementById('email').value || '');
+      const rating = encodeURIComponent(document.getElementById('rating').value);
+      const what = encodeURIComponent(document.getElementById('what').value);
+      const improve = encodeURIComponent(document.getElementById('improve').value);
+      const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ARating: ${rating}%0D%0AWhat worked: ${what}%0D%0AImprovements: ${improve}`;
+      const subject = encodeURIComponent('NIAT workshop feedback');
+      this.action = `mailto:${to}?subject=${subject}&body=${body}`;
+      // allow default submit to proceed (which triggers mail client)
+    });
+  </script></body>
+</html>
